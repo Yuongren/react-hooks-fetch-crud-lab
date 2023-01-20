@@ -13,7 +13,7 @@ function QuestionList() {
   }, []);
 
   function handleDeleteClick(id) {
-    fetch(`https://json-server-vercel-pink.vercel.app/questions/${id}`, {
+    fetch(`http://localhost:4000/questions/${id}`, {
       method: "DELETE",
     })
       .then((r) => r.json())
