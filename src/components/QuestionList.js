@@ -5,7 +5,7 @@ function QuestionList() {
   const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
-    fetch("https://json-server-vercel-pink.vercel.app/questions")
+    fetch("http://localhost:4000/questions")
       .then((resp) => resp.json())
       .then((questions) => {
         setQuestions(questions);
@@ -13,7 +13,7 @@ function QuestionList() {
   }, []);
 
   function handleDeleteClick(id) {
-    fetch(`https://www.npoint.io/docs/6f4ae82303071716c974/${id}`, {
+    fetch(`https://json-server-vercel-pink.vercel.app/questions/${id}`, {
       method: "DELETE",
     })
       .then((r) => r.json())
@@ -24,7 +24,7 @@ function QuestionList() {
   }
 
   function handleAnswerChange(id, correctIndex) {
-    fetch(`http://localhost:4000/questions/${id}`, {
+    fetch(`https://json-server-vercel-pink.vercel.app/questions/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
