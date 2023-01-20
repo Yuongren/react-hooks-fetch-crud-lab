@@ -19,7 +19,7 @@ function QuestionForm(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    fetch("http://localhost:4000/questions", {
+    fetch("https://json-server-vercel-pink.vercel.app/questions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

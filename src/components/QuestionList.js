@@ -5,7 +5,7 @@ function QuestionList() {
   const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/questions")
+    fetch("https://json-server-vercel-pink.vercel.app/questions")
       .then((resp) => resp.json())
       .then((questions) => {
         setQuestions(questions);
@@ -13,7 +13,7 @@ function QuestionList() {
   }, []);
 
   function handleDeleteClick(id) {
-    fetch(`http://localhost:4000/questions/${id}`, {
+    fetch(`https://www.npoint.io/docs/6f4ae82303071716c974/${id}`, {
       method: "DELETE",
     })
       .then((r) => r.json())
